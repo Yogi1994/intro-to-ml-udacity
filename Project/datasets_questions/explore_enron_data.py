@@ -32,3 +32,13 @@ for person in enron_data:
 
 # number of person of interest
 print "number of person of interest", number_of_poi
+
+poi_names_file = open('../final_project/poi_names.txt','r')
+poi_names = []
+for line in poi_names_file:
+	if(line[0] == '('):
+		poi_names.append(line)
+print "toal number of poi", len(poi_names)
+
+print "total value of stock belongs to  James Prentice", enron_data['PRENTICE JAMES']['total_stock_value']
+print "How many email messages do we have from Wesley Colwell to persons of interest?", enron_data['COLWELL WESLEY']['from_this_person_to_poi']
